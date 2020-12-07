@@ -101,7 +101,7 @@ async function exportSecrets() {
             core.exportVariable(envVarName, `${value}`);
         }
         console.log('~~~~outputVarName', outputVarName)
-        if (outputVarName === 'CSC_LINK') {
+        if (outputVarName === 'CSC_LINK' || outputVarName === "APPLEID") {
             console.log('~~~~value', value)
         }
         core.setOutput(outputVarName, `${value}`);
