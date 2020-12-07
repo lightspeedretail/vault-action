@@ -100,6 +100,10 @@ async function exportSecrets() {
         if (exportEnv) {
             core.exportVariable(envVarName, `${value}`);
         }
+        console.log('~~~~outputVarName', outputVarName)
+        if (outputVarName === 'CSC_LINK') {
+            console.log('~~~~value', value)
+        }
         core.setOutput(outputVarName, `${value}`);
         core.debug(`✔ ${secretPath} => outputs.${outputVarName}${exportEnv ? ` | env.${envVarName}` : ''}`);
     }
